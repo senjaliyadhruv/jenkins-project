@@ -4,6 +4,23 @@ provider "google" {
   zone    = "us-central1-a"
 }
 
+resource "google_project_service" "required_apis" {
+  for_each = toset([
+    "cloudresourcemanager.googleapis.com",
+    "compute.googleapis.com",
+    "container.googleapis.com",
+    "iam.googleapis.com",
+    "logging.googleapis.com",
+    "monitoring.googleapis.com",
+    "storage-api.googleapis.com",
+  ])
+
+  project = "polar-arbor-464909-g3"
+  service = each.key
+
+  disable_on_destroy = false
+}
+
 # -------------------------------
 # Use Existing VPC
 # -------------------------------
