@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/vardhan1228/project-1-maven-jenkins-CICD-docker-eks-.git'
+                git branch: 'main', url: 'https://github.com/senjaliyadhruv/jenkins-project.git'
             }
         }
         stage('Terraform version'){
