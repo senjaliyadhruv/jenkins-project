@@ -8,13 +8,17 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'echo "Running build step"; ls -la'
-        // replace with your real build commands, e.g. mvn package, npm ci && npm run build
+        sh 'echo "Building project..."'
       }
     }
     stage('Test') {
       steps {
-        sh 'echo "Run tests here"'
+        sh 'echo "Running tests..."'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh 'echo "Deploying project..."'
       }
     }
   }
