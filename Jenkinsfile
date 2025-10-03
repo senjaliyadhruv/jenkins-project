@@ -9,6 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'echo "Building project..."'
+        sh 'touch jenkins-git'
       }
     }
     stage('Test') {
